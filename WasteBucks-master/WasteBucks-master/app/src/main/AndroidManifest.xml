@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <!-- Internet Permission -->
+    <uses-permission android:name="android.permission.INTERNET" />
+
+    <!-- Storage Permissions (Deprecated in Android 11+) -->
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE"
+        android:maxSdkVersion="29" />
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE"
+        android:maxSdkVersion="29" />
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION"/>
+    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION"/>
+
+    <!-- Manage External Storage (For Android 11+) -->
+    <uses-permission android:name="android.permission.MANAGE_EXTERNAL_STORAGE" />
+
+    <application
+        android:allowBackup="true"
+        android:dataExtractionRules="@xml/data_extraction_rules"
+        android:fullBackupContent="@xml/backup_rules"
+        android:icon="@mipmap/ic_launcher"
+        android:label="@string/app_name"
+        android:supportsRtl="true"
+        android:theme="@style/Theme.WasteBucks"
+        android:usesCleartextTraffic="true"
+        tools:targetApi="31">
+
+        <!-- Activities -->
+        <activity android:name=".ContactUs" android:exported="false" />
+        <activity android:name=".AboutUs" android:exported="false" />
+        <activity android:name=".admin.AdminDashboard" android:exported="false" />
+        <activity android:name=".RateUs" android:exported="false" />
+        <activity android:name=".BookPickup" android:exported="false" />
+        <activity android:name=".admin.AdminScreen" android:exported="false" />
+        <activity android:name=".LeaderboardActivity" android:exported="false" />
+        <activity android:name=".ShoppingActivity" android:exported="false" />
+        <activity android:name=".CreatePost" android:exported="false" />
+
+        <!-- Splash Screen (Launcher Activity) -->
+        <activity
+            android:name=".SplashScreen"
+            android:exported="true"
+            android:theme="@style/SplashScreenTheme">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+
+        <activity android:name=".OnboardingActivity"
+            android:exported="false"
+            android:theme="@style/SplashScreenTheme" />
+        <activity android:name=".RegisterActivity" android:exported="false" />
+        <activity android:name=".LoginActivity" android:exported="false" />
+        <activity android:name=".MainActivity" android:exported="false" />
+
+        <!-- Admin Section -->
+        <activity android:name=".admin.ManagePostsActivity" android:exported="true" />
+
+        <!-- Add Driver Dashboard Activity -->
+        <activity android:name=".driver.DriverDashboardActivity" android:exported="false" />
+
+    </application>
+</manifest>
